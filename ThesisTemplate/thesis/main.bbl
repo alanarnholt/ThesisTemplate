@@ -1,0 +1,434 @@
+\begin{thebibliography}{65}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{Arnholt(2021)}]{R-PASWR2}
+Arnholt AT (2021).
+\newblock \emph{PASWR2: Probability and Statistics with R, Second Edition}.
+\newblock Https://github.com/alanarnholt/PASWR2.
+
+\bibitem[{Arnold \emph{et~al.}(1998)Arnold, Wilson, and Boshier}]{Reference3}
+Arnold AS, Wilson JS, Boshier MG (1998).
+\newblock \enquote{A Simple Extended-Cavity Diode Laser.}
+\newblock \emph{Review of Scientific Instruments}, \textbf{69}(3), 1236--1239.
+\newblock \urlprefix\url{http://link.aip.org/link/?RSI/69/1236/1}.
+
+\bibitem[{Auguie(2017)}]{R-gridExtra}
+Auguie B (2017).
+\newblock \emph{gridExtra: Miscellaneous Functions for "Grid" Graphics}.
+\newblock R package version 2.3,
+  \urlprefix\url{https://CRAN.R-project.org/package=gridExtra}.
+
+\bibitem[{Boettiger(2021)}]{R-knitcitations}
+Boettiger C (2021).
+\newblock \emph{knitcitations: Citations for Knitr Markdown Files}.
+\newblock R package version 1.0.12,
+  \urlprefix\url{https://github.com/cboettig/knitcitations}.
+
+\bibitem[{Canty and Ripley(2021)}]{R-boot}
+Canty A, Ripley B (2021).
+\newblock \emph{boot: Bootstrap Functions (Originally by Angelo Canty for S)}.
+\newblock R package version 1.3-28,
+  \urlprefix\url{https://CRAN.R-project.org/package=boot}.
+
+\bibitem[{Chang \emph{et~al.}(2022)Chang, Cheng, Allaire, Sievert, Schloerke,
+  Xie, Allen, McPherson, Dipert, and Borges}]{R-shiny}
+Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J, McPherson
+  J, Dipert A, Borges B (2022).
+\newblock \emph{shiny: Web Application Framework for R}.
+\newblock R package version 1.7.2, \urlprefix\url{https://shiny.rstudio.com/}.
+
+\bibitem[{Dahl \emph{et~al.}(2019)Dahl, Scott, Roosen, Magnusson, and
+  Swinton}]{R-xtable}
+Dahl DB, Scott D, Roosen C, Magnusson A, Swinton J (2019).
+\newblock \emph{xtable: Export Tables to LaTeX or HTML}.
+\newblock R package version 1.8-4,
+  \urlprefix\url{http://xtable.r-forge.r-project.org/}.
+
+\bibitem[{Davison and Hinkley(1997)}]{boot1997}
+Davison AC, Hinkley DV (1997).
+\newblock \emph{Bootstrap Methods and Their Applications}.
+\newblock Cambridge University Press, Cambridge.
+\newblock ISBN 0-521-57391-2,
+  \urlprefix\url{http://statwww.epfl.ch/davison/BMA/}.
+
+\bibitem[{Dragulescu and Arendt(2020)}]{R-xlsx}
+Dragulescu A, Arendt C (2020).
+\newblock \emph{xlsx: Read, Write, Format Excel 2007 and Excel 97/2000/XP/2003
+  Files}.
+\newblock R package version 0.6.5,
+  \urlprefix\url{https://github.com/colearendt/xlsx}.
+
+\bibitem[{Dragulescu(2014)}]{R-xlsxjars}
+Dragulescu AA (2014).
+\newblock \emph{xlsxjars: Package required POI jars for the xlsx package}.
+\newblock R package version 0.6.1,
+  \urlprefix\url{https://CRAN.R-project.org/package=xlsxjars}.
+
+\bibitem[{Faraway(2016)}]{R-faraway}
+Faraway J (2016).
+\newblock \emph{faraway: Functions and Datasets for Books by Julian Faraway}.
+\newblock R package version 1.0.7,
+  \urlprefix\url{http://people.bath.ac.uk/jjf23/}.
+
+\bibitem[{Francois(2020)}]{R-bibtex}
+Francois R (2020).
+\newblock \emph{bibtex: Bibtex Parser}.
+\newblock R package version 0.4.2.3,
+  \urlprefix\url{https://github.com/romainfrancois/bibtex}.
+
+\bibitem[{Friendly(2022)}]{R-vcdExtra}
+Friendly M (2022).
+\newblock \emph{vcdExtra: vcd Extensions and Additions}.
+\newblock R package version 0.8-0,
+  \urlprefix\url{https://friendly.github.io/vcdExtra/}.
+
+\bibitem[{Gandrud(2013)}]{gandrud2013reproducible}
+Gandrud C (2013).
+\newblock \emph{Reproducible Research with R and RStudio}.
+\newblock CRC Press.
+
+\bibitem[{Gandrud(2016)}]{R-repmis}
+Gandrud C (2016).
+\newblock \emph{repmis: Miscellaneous Tools for Reproducible Research}.
+\newblock R package version 0.5,
+  \urlprefix\url{http://cran.r-project.org/package=repmis}.
+
+\bibitem[{Genz and Bretz(2009)}]{mvtnorm2009}
+Genz A, Bretz F (2009).
+\newblock \emph{Computation of Multivariate Normal and t Probabilities}.
+\newblock Lecture Notes in Statistics. Springer-Verlag, Heidelberg.
+\newblock ISBN 978-3-642-01688-2.
+
+\bibitem[{Genz \emph{et~al.}(2021)Genz, Bretz, Miwa, Mi, and
+  Hothorn}]{R-mvtnorm}
+Genz A, Bretz F, Miwa T, Mi X, Hothorn T (2021).
+\newblock \emph{mvtnorm: Multivariate Normal and t Distributions}.
+\newblock R package version 1.1-3,
+  \urlprefix\url{http://mvtnorm.R-forge.R-project.org}.
+
+\bibitem[{Gr{\"a}tzer and Sch{\"o}pf(2007)}]{gratzer2007more}
+Gr{\"a}tzer G, Sch{\"o}pf R (2007).
+\newblock \emph{More math into latex}, volume~4.
+\newblock Springer.
+
+\bibitem[{Graves \emph{et~al.}(2019)Graves, Piepho, and with help~from Sundar
+  Dorai-Raj}]{R-multcompView}
+Graves S, Piepho HP, with help~from Sundar Dorai-Raj LS (2019).
+\newblock \emph{multcompView: Visualizations of Paired Comparisons}.
+\newblock R package version 0.1-8,
+  \urlprefix\url{https://CRAN.R-project.org/package=multcompView}.
+
+\bibitem[{Gross and Ligges(2015)}]{R-nortest}
+Gross J, Ligges U (2015).
+\newblock \emph{nortest: Tests for Normality}.
+\newblock R package version 1.0-4,
+  \urlprefix\url{https://CRAN.R-project.org/package=nortest}.
+
+\bibitem[{Harrell(2022)}]{R-Hmisc}
+Harrell Jr FE (2022).
+\newblock \emph{Hmisc: Harrell Miscellaneous}.
+\newblock R package version 4.7-1,
+  \urlprefix\url{https://hbiostat.org/R/Hmisc/}.
+
+\bibitem[{Hawthorn \emph{et~al.}(2001)Hawthorn, Weber, and
+  Scholten}]{Reference1}
+Hawthorn CJ, Weber KP, Scholten RE (2001).
+\newblock \enquote{Littrow Configuration Tunable External Cavity Diode Laser
+  with Fixed Direction Output Beam.}
+\newblock \emph{Review of Scientific Instruments}, \textbf{72}(12), 4477--4479.
+\newblock \urlprefix\url{http://link.aip.org/link/?RSI/72/4477/1}.
+
+\bibitem[{Hothorn \emph{et~al.}(2008{\natexlab{a}})Hothorn, Bretz, and
+  Westfall}]{multcomp2008}
+Hothorn T, Bretz F, Westfall P (2008{\natexlab{a}}).
+\newblock \enquote{Simultaneous Inference in General Parametric Models.}
+\newblock \emph{Biometrical Journal}, \textbf{50}(3), 346--363.
+
+\bibitem[{Hothorn \emph{et~al.}(2022)Hothorn, Bretz, and Westfall}]{R-multcomp}
+Hothorn T, Bretz F, Westfall P (2022).
+\newblock \emph{multcomp: Simultaneous Inference in General Parametric Models}.
+\newblock R package version 1.4-20,
+  \urlprefix\url{https://CRAN.R-project.org/package=multcomp}.
+
+\bibitem[{Hothorn \emph{et~al.}(2006)Hothorn, Hornik, {van de Wiel}, and
+  Zeileis}]{coin2006}
+Hothorn T, Hornik K, {van de Wiel} MA, Zeileis A (2006).
+\newblock \enquote{A {L}ego system for conditional inference.}
+\newblock \emph{The American Statistician}, \textbf{60}(3), 257--263.
+\newblock \doi{10.1198/000313006X118430}.
+
+\bibitem[{Hothorn \emph{et~al.}(2008{\natexlab{b}})Hothorn, Hornik, {van de
+  Wiel}, and Zeileis}]{coin2008}
+Hothorn T, Hornik K, {van de Wiel} MA, Zeileis A (2008{\natexlab{b}}).
+\newblock \enquote{Implementing a class of permutation tests: The {coin}
+  package.}
+\newblock \emph{Journal of Statistical Software}, \textbf{28}(8), 1--23.
+\newblock \doi{10.18637/jss.v028.i08}.
+
+\bibitem[{Hothorn \emph{et~al.}(2021)Hothorn, Winell, Hornik, {van de Wiel},
+  and Zeileis}]{R-coin}
+Hothorn T, Winell H, Hornik K, {van de Wiel} MA, Zeileis A (2021).
+\newblock \emph{coin: Conditional Inference Procedures in a Permutation Test
+  Framework}.
+\newblock R package version 1.4-2,
+  \urlprefix\url{http://coin.r-forge.r-project.org}.
+
+\bibitem[{Lumley(2020)}]{R-leaps}
+Lumley T (2020).
+\newblock \emph{leaps: Regression Subset Selection}.
+\newblock R package version 3.1,
+  \urlprefix\url{https://CRAN.R-project.org/package=leaps}.
+
+\bibitem[{Meyer \emph{et~al.}(2022{\natexlab{a}})Meyer, Dimitriadou, Hornik,
+  Weingessel, and Leisch}]{R-e1071}
+Meyer D, Dimitriadou E, Hornik K, Weingessel A, Leisch F (2022{\natexlab{a}}).
+\newblock \emph{e1071: Misc Functions of the Department of Statistics,
+  Probability Theory Group (Formerly: E1071), TU Wien}.
+\newblock R package version 1.7-11,
+  \urlprefix\url{https://CRAN.R-project.org/package=e1071}.
+
+\bibitem[{Meyer \emph{et~al.}(2006)Meyer, Zeileis, and Hornik}]{vcd2006}
+Meyer D, Zeileis A, Hornik K (2006).
+\newblock \enquote{The Strucplot Framework: Visualizing Multi-Way Contingency
+  Tables with vcd.}
+\newblock \emph{Journal of Statistical Software}, \textbf{17}(3), 1--48.
+\newblock \doi{10.18637/jss.v017.i03}.
+
+\bibitem[{Meyer \emph{et~al.}(2022{\natexlab{b}})Meyer, Zeileis, and
+  Hornik}]{R-vcd}
+Meyer D, Zeileis A, Hornik K (2022{\natexlab{b}}).
+\newblock \emph{vcd: Visualizing Categorical Data}.
+\newblock R package version 1.4-10,
+  \urlprefix\url{https://CRAN.R-project.org/package=vcd}.
+
+\bibitem[{Nijs \emph{et~al.}(2022)Nijs, Fang, {Trestle Technology, LLC}, and
+  Allen}]{R-shinyAce}
+Nijs V, Fang F, {Trestle Technology, LLC}, Allen J (2022).
+\newblock \emph{shinyAce: Ace Editor Bindings for Shiny}.
+\newblock R package version 0.4.2,
+  \urlprefix\url{https://CRAN.R-project.org/package=shinyAce}.
+
+\bibitem[{Pinheiro \emph{et~al.}(2022)Pinheiro, Bates, and {R Core
+  Team}}]{R-nlme}
+Pinheiro J, Bates D, {R Core Team} (2022).
+\newblock \emph{nlme: Linear and Nonlinear Mixed Effects Models}.
+\newblock R package version 3.1-159,
+  \urlprefix\url{https://svn.r-project.org/R-packages/trunk/nlme/}.
+
+\bibitem[{Pinheiro and Bates(2000)}]{nlme2000}
+Pinheiro JC, Bates DM (2000).
+\newblock \emph{Mixed-Effects Models in S and S-PLUS}.
+\newblock Springer, New York.
+\newblock \doi{10.1007/b98882}.
+
+\bibitem[{{R Core Team}(2018)}]{R-foreign}
+{R Core Team} (2018).
+\newblock \emph{foreign: Read Data Stored by Minitab, S, SAS, SPSS, Stata,
+  Systat, Weka, dBase, ...}
+\newblock R package version 0.8-71,
+  \urlprefix\url{https://CRAN.R-project.org/package=foreign}.
+
+\bibitem[{{R Core Team}(2019)}]{R-base}
+{R Core Team} (2019).
+\newblock \emph{R: A Language and Environment for Statistical Computing}.
+\newblock R Foundation for Statistical Computing, Vienna, Austria.
+\newblock \urlprefix\url{https://www.R-project.org/}.
+
+\bibitem[{Rinker(2014)}]{R-reports}
+Rinker T (2014).
+\newblock \emph{reports: Assist the Workflow of Writing Academic Articles and
+  Other Reports}.
+\newblock R package version 0.1.4,
+  \urlprefix\url{http://trinker.github.com/reports/}.
+
+\bibitem[{Rinker(2013)}]{reports2013}
+Rinker TW (2013).
+\newblock \emph{{reports}: {P}ackage to asssist in report writing}.
+\newblock University at Buffalo/SUNY, Buffalo, New York.
+\newblock Version 0.1.4, \urlprefix\url{http://github.com/trinker/reports}.
+
+\bibitem[{Ripley(2022)}]{R-MASS}
+Ripley B (2022).
+\newblock \emph{MASS: Support Functions and Datasets for Venables and Ripley's
+  MASS}.
+\newblock R package version 7.3-58.1,
+  \urlprefix\url{http://www.stats.ox.ac.uk/pub/MASS4/}.
+
+\bibitem[{Sarkar(2008)}]{lattice2008}
+Sarkar D (2008).
+\newblock \emph{Lattice: Multivariate Data Visualization with R}.
+\newblock Springer, New York.
+\newblock ISBN 978-0-387-75968-5,
+  \urlprefix\url{http://lmdvr.r-forge.r-project.org}.
+
+\bibitem[{Sarkar(2021)}]{R-lattice}
+Sarkar D (2021).
+\newblock \emph{lattice: Trellis Graphics for R}.
+\newblock R package version 0.20-45,
+  \urlprefix\url{http://lattice.r-forge.r-project.org/}.
+
+\bibitem[{Sarkar and Andrews(2022)}]{R-latticeExtra}
+Sarkar D, Andrews F (2022).
+\newblock \emph{latticeExtra: Extra Graphical Utilities Based on Lattice}.
+\newblock R package version 0.6-30,
+  \urlprefix\url{http://latticeextra.r-forge.r-project.org/}.
+
+\bibitem[{Sharpsteen and Bracken(2020)}]{R-tikzDevice}
+Sharpsteen C, Bracken C (2020).
+\newblock \emph{tikzDevice: R Graphics Output in LaTeX Format}.
+\newblock R package version 0.12.3.1,
+  \urlprefix\url{https://github.com/daqana/tikzDevice}.
+
+\bibitem[{Spector(2008)}]{spector2008data}
+Spector P (2008).
+\newblock \emph{Data manipulation with R}.
+\newblock Springer.
+
+\bibitem[{{Temple Lang}(2022)}]{R-RCurl}
+{Temple Lang} D (2022).
+\newblock \emph{RCurl: General Network (HTTP/FTP/...) Client Interface for R}.
+\newblock R package version 1.98-1.8,
+  \urlprefix\url{https://CRAN.R-project.org/package=RCurl}.
+
+\bibitem[{Venables and Ripley(2002)}]{MASS2002}
+Venables WN, Ripley BD (2002).
+\newblock \emph{Modern Applied Statistics with S}.
+\newblock Fourth edition. Springer, New York.
+\newblock ISBN 0-387-95457-0,
+  \urlprefix\url{https://www.stats.ox.ac.uk/pub/MASS4/}.
+
+\bibitem[{Wand(2021)}]{R-KernSmooth}
+Wand M (2021).
+\newblock \emph{KernSmooth: Functions for Kernel Smoothing Supporting Wand \&
+  Jones (1995)}.
+\newblock R package version 2.23-20,
+  \urlprefix\url{https://CRAN.R-project.org/package=KernSmooth}.
+
+\bibitem[{Wickham(2007)}]{reshape22007}
+Wickham H (2007).
+\newblock \enquote{Reshaping Data with the {reshape} Package.}
+\newblock \emph{Journal of Statistical Software}, \textbf{21}(12), 1--20.
+\newblock \urlprefix\url{http://www.jstatsoft.org/v21/i12/}.
+
+\bibitem[{Wickham(2011)}]{plyr2011}
+Wickham H (2011).
+\newblock \enquote{The Split-Apply-Combine Strategy for Data Analysis.}
+\newblock \emph{Journal of Statistical Software}, \textbf{40}(1), 1--29.
+\newblock \urlprefix\url{https://www.jstatsoft.org/v40/i01/}.
+
+\bibitem[{Wickham(2016)}]{ggplot22016}
+Wickham H (2016).
+\newblock \emph{ggplot2: Elegant Graphics for Data Analysis}.
+\newblock Springer-Verlag New York.
+\newblock ISBN 978-3-319-24277-4.
+\newblock \urlprefix\url{https://ggplot2.tidyverse.org}.
+
+\bibitem[{Wickham(2020)}]{R-reshape2}
+Wickham H (2020).
+\newblock \emph{reshape2: Flexibly Reshape Data: A Reboot of the Reshape
+  Package}.
+\newblock R package version 1.4.4,
+  \urlprefix\url{https://github.com/hadley/reshape}.
+
+\bibitem[{Wickham(2022{\natexlab{a}})}]{R-httr}
+Wickham H (2022{\natexlab{a}}).
+\newblock \emph{httr: Tools for Working with URLs and HTTP}.
+\newblock R package version 1.4.4,
+  \urlprefix\url{https://CRAN.R-project.org/package=httr}.
+
+\bibitem[{Wickham(2022{\natexlab{b}})}]{R-plyr}
+Wickham H (2022{\natexlab{b}}).
+\newblock \emph{plyr: Tools for Splitting, Applying and Combining Data}.
+\newblock R package version 1.8.7,
+  \urlprefix\url{https://CRAN.R-project.org/package=plyr}.
+
+\bibitem[{Wickham \emph{et~al.}(2022{\natexlab{a}})Wickham, Chang, Henry,
+  Pedersen, Takahashi, Wilke, Woo, Yutani, and Dunnington}]{R-ggplot2}
+Wickham H, Chang W, Henry L, Pedersen TL, Takahashi K, Wilke C, Woo K, Yutani
+  H, Dunnington D (2022{\natexlab{a}}).
+\newblock \emph{ggplot2: Create Elegant Data Visualisations Using the Grammar
+  of Graphics}.
+\newblock R package version 3.3.6,
+  \urlprefix\url{https://CRAN.R-project.org/package=ggplot2}.
+
+\bibitem[{Wickham \emph{et~al.}(2022{\natexlab{b}})Wickham, Danenberg, Csárdi,
+  and Eugster}]{R-roxygen2}
+Wickham H, Danenberg P, Csárdi G, Eugster M (2022{\natexlab{b}}).
+\newblock \emph{roxygen2: In-Line Documentation for R}.
+\newblock R package version 7.2.1,
+  \urlprefix\url{https://CRAN.R-project.org/package=roxygen2}.
+
+\bibitem[{Wickham \emph{et~al.}(2022{\natexlab{c}})Wickham, Hester, Chang, and
+  Bryan}]{R-devtools}
+Wickham H, Hester J, Chang W, Bryan J (2022{\natexlab{c}}).
+\newblock \emph{devtools: Tools to Make Developing R Packages Easier}.
+\newblock R package version 2.4.4,
+  \urlprefix\url{https://CRAN.R-project.org/package=devtools}.
+
+\bibitem[{Wickham and Pedersen(2019)}]{R-gtable}
+Wickham H, Pedersen TL (2019).
+\newblock \emph{gtable: Arrange Grobs in Tables}.
+\newblock R package version 0.3.0,
+  \urlprefix\url{https://github.com/r-lib/gtable}.
+
+\bibitem[{Wieman and Hollberg(1991)}]{Reference2}
+Wieman CE, Hollberg L (1991).
+\newblock \enquote{Using Diode Lasers for Atomic Physics.}
+\newblock \emph{Review of Scientific Instruments}, \textbf{62}(1), 1--20.
+\newblock \urlprefix\url{http://link.aip.org/link/?RSI/62/1/1}.
+
+\bibitem[{Xie(2013)}]{xie2013dynamic}
+Xie Y (2013).
+\newblock \emph{Dynamic Documents with R and knitr}.
+\newblock CRC Press.
+
+\bibitem[{Xie(2014)}]{knitr2014}
+Xie Y (2014).
+\newblock \enquote{knitr: A Comprehensive Tool for Reproducible Research in
+  {R}.}
+\newblock In V~Stodden, F~Leisch, RD~Peng (eds.), \emph{Implementing
+  Reproducible Computational Research}. Chapman and Hall/CRC.
+\newblock ISBN 978-1466561595,
+  \urlprefix\url{http://www.crcpress.com/product/isbn/9781466561595}.
+
+\bibitem[{Xie(2015)}]{knitr2015}
+Xie Y (2015).
+\newblock \emph{Dynamic Documents with {R} and knitr}.
+\newblock 2nd edition. Chapman and Hall/CRC, Boca Raton, Florida.
+\newblock ISBN 978-1498716963, \urlprefix\url{https://yihui.org/knitr/}.
+
+\bibitem[{Xie(2022{\natexlab{a}})}]{R-formatR}
+Xie Y (2022{\natexlab{a}}).
+\newblock \emph{formatR: Format R Code Automatically}.
+\newblock R package version 1.12,
+  \urlprefix\url{https://github.com/yihui/formatR}.
+
+\bibitem[{Xie(2022{\natexlab{b}})}]{R-knitr}
+Xie Y (2022{\natexlab{b}}).
+\newblock \emph{knitr: A General-Purpose Package for Dynamic Report Generation
+  in R}.
+\newblock R package version 1.39, \urlprefix\url{https://yihui.org/knitr/}.
+
+\bibitem[{Xie and Qiu(2021)}]{R-highr}
+Xie Y, Qiu Y (2021).
+\newblock \emph{highr: Syntax Highlighting for R Source Code}.
+\newblock R package version 0.9,
+  \urlprefix\url{https://github.com/yihui/highr}.
+
+\bibitem[{Zeileis \emph{et~al.}(2007)Zeileis, Meyer, and Hornik}]{vcd2007}
+Zeileis A, Meyer D, Hornik K (2007).
+\newblock \enquote{Residual-based Shadings for Visualizing (Conditional)
+  Independence.}
+\newblock \emph{Journal of Computational and Graphical Statistics},
+  \textbf{16}(3), 507--525.
+\newblock \doi{10.1198/106186007X237856}.
+
+\end{thebibliography}

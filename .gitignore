@@ -12,7 +12,6 @@
 *.aux
 *.blg
 *.out
-*.pdf
 *.lof
 *.lot
 *.toc

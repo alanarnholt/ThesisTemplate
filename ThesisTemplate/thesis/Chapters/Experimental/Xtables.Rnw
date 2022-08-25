@@ -1,0 +1,522 @@
+\documentclass{article}
+\usepackage[margin=1.25in]{geometry}
+\usepackage[table]{xcolor}
+\usepackage{booktabs, colortbl, longtable}
+\usepackage[pdftitle={Tables With knitr and xtable}, colorlinks=true, linkcolor=blue,
+citecolor=blue, urlcolor=blue, linktocpage=true, breaklinks=true]{hyperref}
+
+
+
+\definecolor{lightgray}{gray}{0.9}
+\newcommand{\prog}[1]{\textsf{#1}} %use for program
+\newcommand{\type}[1]{\texttt{#1}} %use for variables in R
+\newcommand{\func}[1]{\texttt{#1()}}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}} 
+
+\begin{document}
+\title{Put Something Here}
+\author{Joe \TeX{}er}
+\maketitle
+
+<<MAINsetup, echo = FALSE, results= 'hide', message = FALSE, warning = FALSE>>=
+library(xtable)
+opts_chunk$set(comment = NA, fig.show='hold', fig.height=7, fig.width=7, 
+               highlight = TRUE, tidy = TRUE, tidy.opts=list(keep.blank.line=FALSE, width.cutoff= 55))
+@
+
+<<BS, comment = NA, echo = FALSE>>=
+rs <- c(3969, 3204, 2892)
+xstar1 <- rep(rs, each = 9)
+xstar2 <- rep(rep(rs, each = 3), 3)
+xstar3 <- rep(rs, 9)
+XD <- data.frame(xstar1, xstar2, xstar3)
+xbarstar <- apply(XD, 1, mean)
+BD <- cbind(XD, xbarstar)
+WD <- BD
+@
+
+<<BT, results='asis', echo =FALSE>>=
+colnames(WD) <- c("$x^*_1$", "$x^*_2$", "$x^*_3$", "$\\bar{x}^*$")
+print(xtable(WD, caption = "All possible Samples of Size 3 from 3969, 3204, and 2892", digits = 0, align ="ccccc"), hline.after=c(-1, -1, 0, 0, 27, 27), type = "latex", include.rownames=FALSE, sanitize.text.function=function(x){x}, caption.placement = "top")
+@
+
+<<BT2, results='asis', echo =FALSE>>=
+colnames(WD) <- c("$x^*_1$", "$x^*_2$", "$x^*_3$", "$\\bar{x}^*$")
+print(xtable(WD, caption = "All possible Samples of Size 3 from 3969, 3204, and 2892", digits = 0, align ="|c|c|c|c|c|"), hline.after=c(-1, -1, 0, 0, 27, 27), type = "latex", include.rownames=TRUE, sanitize.text.function=function(x){x}, caption.placement = "top")
+@
+
+Look at Table \ref{BT3}!
+
+<<BT3, results='asis', echo =FALSE>>=
+colnames(WD) <- c("$x^*_1$", "$x^*_2$", "$x^*_3$", "$\\bar{x}^*$")
+print(xtable(WD, caption = "All possible Samples of Size 3 from 3969, 3204, and 2892", digits = 0, align ="|c|c|c|c|c|", label = "BT3"), hline.after=c(-1, -1, 0, 0, 27, 27), type = "latex", include.rownames=TRUE, sanitize.text.function=function(x){x}, caption.placement = "top")
+@
+
+
+<<BT4, results='asis', echo =FALSE>>=
+colnames(WD) <- c("$x^*_1$", "$x^*_2$", "$x^*_3$", "$\\bar{x}^*$")
+rws <- c(0, 13, 26)
+col <- rep("\\rowcolor[gray]{0.90}", 3)
+print(xtable(WD, caption = "All possible Samples of Size 3 from 3969, 3204, and 2892", digits = 0, align ="|c|c|c|c|c|", label = "BT4"),  type = "latex", include.rownames=FALSE, sanitize.text.function=function(x){x}, add.to.row = list(pos = as.list(rws), command = col), caption.placement = "top")
+@
+
+<<BT5, results='asis', echo =FALSE>>=
+colnames(WD) <- c("$x^*_1$", "$x^*_2$", "$x^*_3$", "$\\bar{x}^*$")
+rws <- c(0, 13, 26)
+col <- rep("\\rowcolor[gray]{0.90}", 3)
+print(xtable(WD, caption = "All possible Samples of Size 3 from 3969, 3204, and 2892", digits = 0, align ="|c|c|c|c|c|", label = "BT5"),  type = "latex", include.rownames=FALSE, sanitize.text.function=function(x){x}, add.to.row = list(pos = as.list(rws), command = col), booktabs = TRUE, caption.placement = "top")
+@
+
+<<BT6, results='asis', echo =FALSE>>=
+colnames(WD) <- c("$x^*_1$", "$x^*_2$", "$x^*_3$", "$\\bar{x}^*$")
+rws <- c(0, 13, 26)
+col <- rep("\\rowcolor[gray]{0.90}", 3)
+print(xtable(WD, caption = "All possible Samples of Size 3 from 3969, 3204, and 2892", digits = 0, align ="ccccc", label = "BT6"),  type = "latex", include.rownames=TRUE, sanitize.text.function=function(x){x}, add.to.row = list(pos = as.list(rws), command = col), booktabs = TRUE, caption.placement = "top")
+@
+
+\clearpage
+
+<<ANOVA, warning = FALSE, message = FALSE, echo = FALSE>>=
+library(PASWR)
+mod <- lm(Wear ~ Treat + Block, data = TireWear)
+SMODAOV <- anova(mod)
+SMODAOV
+@
+
+<<results = "asis", echo = FALSE>>=
+print(xtable(SMODAOV, caption = "Default values for ANOVA table"), caption.placement = "top")
+@
+
+<<results = "asis", echo = FALSE>>=
+print(xtable(SMODAOV, caption = "Digits = 7", digits = 7), caption.placement = "top")
+@
+
+
+<<results = "asis", echo = FALSE>>=
+print(xtable(SMODAOV, caption = "Digits = Different", digits = c(0,0,4,4,4,7)), caption.placement = "top")
+@
+
+
+<<results = "asis", echo = FALSE>>=
+print(xtable(SMODAOV, caption = "Digits and Display", digits = c(0,0,rep(3, 4)), display = c("f","f","f","f","f","g")), caption.placement = "top")
+@
+
+
+<<results = "asis", echo = FALSE>>=
+colnames(SMODAOV) <- c("$df$", "$SS$", "$MS$", "$F$", "$\\wp$-value")
+print(xtable(SMODAOV, caption = "Digits and Display Fancy Stuff", digits = c(0,0,rep(3, 4)), display = c("f","f","f","f","f","g")), sanitize.text.function = function(x){x}, caption.placement = "top")
+@
+
+
+
+<<results = "asis", echo = FALSE>>=
+colnames(SMODAOV) <- c("$df$", "$SS$", "$MS$", "$F$", "$\\wp$-value")
+print(xtable(SMODAOV, caption = "Digits and Display Fancy Stuff More So", digits = c(0,0,rep(3, 4)), display = c("f","f","f","f","f","g"), align ="lccccc"), sanitize.text.function = function(x){x}, hline.after=c(-1,-1, 0, 3, 3), caption.placement = "top")
+@
+
+
+<<results = "asis", echo = FALSE>>=
+colnames(SMODAOV) <- c("$df$", "$SS$", "$MS$", "$F$", "$\\wp$-value")
+print(xtable(SMODAOV, caption = "Digits and Display Fancy Stuff More So and Booktabs", digits = c(0,0,rep(3, 4)), display = c("f","f","f","f","f","g"), align ="lccccc"), sanitize.text.function = function(x){x}, booktabs = TRUE, caption.placement = "top")
+@
+
+
+%\clearpage
+
+<<results = "asis", echo = FALSE, message= FALSE, warning = FALSE>>=
+library(PASWR)
+print(xtable(xtabs(~Ease + Treatment, data = EPIDURALf), digits = 0), booktabs = FALSE, caption.placement = "top")
+@
+
+<<results = "asis", echo = FALSE, message= FALSE, warning = FALSE>>=
+print(xtable(xtabs(~Ease + Treatment, data = EPIDURALf), digits = 0), booktabs = TRUE, caption.placement = "top")
+@
+
+<<results = "asis", echo = FALSE, message= FALSE, warning = FALSE>>=
+print(xtable(xtabs(~Doctor + Ease, data = EPIDURALf), digits = 0), booktabs = TRUE, caption.placement = "top")
+@
+
+%\clearpage
+
+\begin{table}
+\caption{Put something here ... \label{nobooktabs}}
+\centering
+\begin{tabular}{llr} 
+\hline
+First name & Last Name & Grade \\
+\hline
+John & Doe & $7.5$ \\ 
+Richard & Miles & $2$ \\ 
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}
+\caption{Put something here ... \label{booktabs}}
+\centering
+\begin{tabular}{llr} 
+\toprule 
+First name & Last Name & Grade \\ 
+\midrule 
+John & Doe & $7.5$ \\ 
+Richard & Miles & $2$ \\ 
+\bottomrule 
+\end{tabular}
+\end{table}
+
+
+\begin{table}
+\caption{Looking just OK}
+\centering
+\begin{tabular}{llr} 
+\toprule 
+Name \\ 
+\cmidrule(r){1-2} 
+First name & Last Name & Grade \\ 
+\midrule 
+John & Doe & $7.5$ \\ 
+Richard & Miles & $2$ \\ 
+\bottomrule 
+\end{tabular}
+\end{table}
+
+
+
+
+
+\begin{table}
+\caption{Looking Good!}
+\centering
+\begin{tabular}{llr} 
+\toprule 
+\multicolumn{2}{c}{Name} \\ 
+\cmidrule(r){1-2} 
+First name & Last Name & Grade \\ 
+\midrule 
+John & Doe & $7.5$ \\ 
+Richard & Miles & $2$ \\ 
+\bottomrule 
+\end{tabular}
+\end{table}
+
+%\clearpage
+
+
+
+
+
+<<results = "asis", echo = FALSE, message= FALSE, warning = FALSE>>=
+print(xtable(head(mtcars[, 1:6]), digits = 4), booktabs = FALSE)
+@
+
+<<results = "asis", echo = FALSE, message= FALSE, warning = FALSE>>=
+print(xtable(head(mtcars[, 1:6]), digits = 4), booktabs = TRUE)
+@
+
+<<results = "asis", echo = FALSE, message= FALSE, warning = FALSE>>=
+print(xtable(head(mtcars[, 1:6]), digits = 4), booktabs = TRUE)
+@
+
+
+% \rowcolors{1}{white}{lightgray}
+\rowcolors{1}{}{}
+\ra{1}  % Increase space between functions
+\begin{longtable}{p{.3\textwidth}p{.7\textwidth}}
+\caption{\label{NumerComTa1}Useful Commands When Working with Numeric
+Vectors}\\  
+\toprule
+Function & Description\\
+\midrule
+\endfirsthead
+\caption{Useful Commands When Working with Numeric Vectors (continued)}\\
+\toprule
+Function & Description\\
+\midrule
+\endhead
+\type{cbind(x, y)} & Joins vectors $x$ and $y$ as columns of vectors\\
+\type{cor(x, y)} & Computes the correlation coefficient\\
+\type{cos(x)} & Returns the cosine for all values in $x$\\
+\type{exp(x)} & Computes $e^x$ for all values in $x$\\
+\type{fivenum(x)} & Computes the smallest value, the lower hinge, the
+median, the upper hinge, and the largest value of a vector $x$\\
+\type{floor(x)} & Returns a numeric vector containing the largest 
+integers not greater than the corresponding elements of $x$\\
+\type{IQR(x)} & Returns the interquartile range of $x$\\
+\type{length(x)} &The number of values in $x$\\
+\type{log(x)} & Computes the natural logarithm for all values in $x$\\
+\type{log10(x)} & Computes the base 10 logarithm for all values in $x$\\
+\type{mad(x, constant = 1)}& Returns the median absolute deviation of $x$\\
+\type{max(x)}& The largest value of $x$ \\
+\type{mean(x)}& Computes the sample mean of $x$\\
+\type{median(x)}& Returns the sample median of $x$\\
+\type{min(x)}& The smallest value of  $x$ \\
+\type{prod(x)}& The product of all the values in $x$\\
+\type{quantile(x)} & Computes the quantiles of a data set stored in a
+vector $x$\\
+\type{range(x)} & Returns the smallest and largest values in $x$\\
+\type{rbind(x, y)} & Joins vectors $x$ and $y$ as rows of vectors\\
+\type{rep(x, n)} & Repeats vector $x$ $n$ times\\
+\type{round(x, n)} & Rounds the number of decimals to $n$ for object $x$\\
+\type{scale(x)} & Computes the $z$-score of $x$\\
+\type{sd(x)} & Computes the sample standard deviation of $x$\\
+\type{seq(x, y, n)} & Creates a sequence of numbers from $x$ to $y$ with
+incremental value $n$\\
+\type{sin(x)} & Returns the sine for all values in $x$\\
+\type{sqrt(x)} & Computes the square root for all values in $x$\\
+\type{sum(x)} & The sum of all the values in $x$\\
+\type{summary(x)} & Returns the minimum, the first quartile, the median,
+the mean, the third quartile, and the maximum of $x$\\
+\type{tan(x)} & Returns the tangent for all values in $x$\\
+\type{var(x)} & Computes the sample variance of $x$\\
+\type{which(x == n)} & Give the index of number $n$ in vector $x$\\
+\bottomrule
+\end{longtable}
+\rowcolors{1}{}{}  % reset so next table does not use coloring!
+
+
+% \rowcolors{1}{white}{lightgray}
+\rowcolors{1}{}{}
+\ra{1.4}  % Increase space between functions
+\begin{longtable}{p{.3\textwidth}p{.7\textwidth}}
+\caption{\label{NumerComTa2}Useful Commands When Working with Numeric
+Vectors}\\  
+\toprule
+Function & Description\\
+\midrule
+\endfirsthead
+\caption{Useful Commands When Working with Numeric Vectors (continued)}\\
+\toprule
+Function & Description\\
+\midrule
+\endhead
+\type{cbind(x, y)} & Joins vectors $x$ and $y$ as columns of vectors\\
+\type{cor(x, y)} & Computes the correlation coefficient\\
+\type{cos(x)} & Returns the cosine for all values in $x$\\
+\type{exp(x)} & Computes $e^x$ for all values in $x$\\
+\type{fivenum(x)} & Computes the smallest value, the lower hinge, the
+median, the upper hinge, and the largest value of a vector $x$\\
+\type{floor(x)} & Returns a numeric vector containing the largest 
+integers not greater than the corresponding elements of $x$\\
+\type{IQR(x)} & Returns the interquartile range of $x$\\
+\type{length(x)} &The number of values in $x$\\
+\type{log(x)} & Computes the natural logarithm for all values in $x$\\
+\type{log10(x)} & Computes the base 10 logarithm for all values in $x$\\
+\type{mad(x, constant = 1)}& Returns the median absolute deviation of $x$\\
+\type{max(x)}& The largest value of $x$ \\
+\type{mean(x)}& Computes the sample mean of $x$\\
+\type{median(x)}& Returns the sample median of $x$\\
+\type{min(x)}& The smallest value of  $x$ \\
+\type{prod(x)}& The product of all the values in $x$\\
+\type{quantile(x)} & Computes the quantiles of a data set stored in a
+vector $x$\\
+\type{range(x)} & Returns the smallest and largest values in $x$\\
+\type{rbind(x, y)} & Joins vectors $x$ and $y$ as rows of vectors\\
+\type{rep(x, n)} & Repeats vector $x$ $n$ times\\
+\type{round(x, n)} & Rounds the number of decimals to $n$ for object $x$\\
+\type{scale(x)} & Computes the $z$-score of $x$\\
+\type{sd(x)} & Computes the sample standard deviation of $x$\\
+\type{seq(x, y, n)} & Creates a sequence of numbers from $x$ to $y$ with
+incremental value $n$\\
+\type{sin(x)} & Returns the sine for all values in $x$\\
+\type{sqrt(x)} & Computes the square root for all values in $x$\\
+\type{sum(x)} & The sum of all the values in $x$\\
+\type{summary(x)} & Returns the minimum, the first quartile, the median,
+the mean, the third quartile, and the maximum of $x$\\
+\type{tan(x)} & Returns the tangent for all values in $x$\\
+\type{var(x)} & Computes the sample variance of $x$\\
+\type{which(x == n)} & Give the index of number $n$ in vector $x$\\
+\bottomrule
+\end{longtable}
+\rowcolors{1}{}{}  % reset so next table does not use coloring!
+
+
+
+% \rowcolors{1}{white}{lightgray}
+\rowcolors{1}{}{lightgray}
+\ra{1}  % Increase space between functions
+\begin{longtable}{p{.3\textwidth}p{.7\textwidth}}
+\caption{\label{NumerComTa3}Useful Commands When Working with Numeric
+Vectors}\\  
+\toprule
+Function & Description\\
+\midrule
+\endfirsthead
+\caption{Useful Commands When Working with Numeric Vectors (continued)}\\
+\toprule
+Function & Description\\
+\midrule
+\endhead
+\type{cbind(x, y)} & Joins vectors $x$ and $y$ as columns of vectors\\
+\type{cor(x, y)} & Computes the correlation coefficient\\
+\type{cos(x)} & Returns the cosine for all values in $x$\\
+\type{exp(x)} & Computes $e^x$ for all values in $x$\\
+\type{fivenum(x)} & Computes the smallest value, the lower hinge, the
+median, the upper hinge, and the largest value of a vector $x$\\
+\type{floor(x)} & Returns a numeric vector containing the largest 
+integers not greater than the corresponding elements of $x$\\
+\type{IQR(x)} & Returns the interquartile range of $x$\\
+\type{length(x)} &The number of values in $x$\\
+\type{log(x)} & Computes the natural logarithm for all values in $x$\\
+\type{log10(x)} & Computes the base 10 logarithm for all values in $x$\\
+\type{mad(x, constant = 1)}& Returns the median absolute deviation of $x$\\
+\type{max(x)}& The largest value of $x$ \\
+\type{mean(x)}& Computes the sample mean of $x$\\
+\type{median(x)}& Returns the sample median of $x$\\
+\type{min(x)}& The smallest value of  $x$ \\
+\type{prod(x)}& The product of all the values in $x$\\
+\type{quantile(x)} & Computes the quantiles of a data set stored in a
+vector $x$\\
+\type{range(x)} & Returns the smallest and largest values in $x$\\
+\type{rbind(x, y)} & Joins vectors $x$ and $y$ as rows of vectors\\
+\type{rep(x, n)} & Repeats vector $x$ $n$ times\\
+\type{round(x, n)} & Rounds the number of decimals to $n$ for object $x$\\
+\type{scale(x)} & Computes the $z$-score of $x$\\
+\type{sd(x)} & Computes the sample standard deviation of $x$\\
+\type{seq(x, y, n)} & Creates a sequence of numbers from $x$ to $y$ with
+incremental value $n$\\
+\type{sin(x)} & Returns the sine for all values in $x$\\
+\type{sqrt(x)} & Computes the square root for all values in $x$\\
+\type{sum(x)} & The sum of all the values in $x$\\
+\type{summary(x)} & Returns the minimum, the first quartile, the median,
+the mean, the third quartile, and the maximum of $x$\\
+\type{tan(x)} & Returns the tangent for all values in $x$\\
+\type{var(x)} & Computes the sample variance of $x$\\
+\type{which(x == n)} & Give the index of number $n$ in vector $x$\\
+\bottomrule
+\end{longtable}
+\rowcolors{1}{}{}  % reset so next table does not use coloring!
+
+
+
+% \rowcolors{1}{white}{lightgray}
+\rowcolors{1}{}{lightgray}
+\ra{1.4}  % Increase space between functions
+\begin{longtable}{p{.3\textwidth}p{.7\textwidth}}
+\caption{\label{NumerComTa4}Useful Commands When Working with Numeric
+Vectors}\\  
+\toprule
+Function & Description\\
+\midrule
+\endfirsthead
+\caption{Useful Commands When Working with Numeric Vectors (continued)}\\
+\toprule
+Function & Description\\
+\midrule
+\endhead
+\type{cbind(x, y)} & Joins vectors $x$ and $y$ as columns of vectors\\
+\type{cor(x, y)} & Computes the correlation coefficient\\
+\type{cos(x)} & Returns the cosine for all values in $x$\\
+\type{exp(x)} & Computes $e^x$ for all values in $x$\\
+\type{fivenum(x)} & Computes the smallest value, the lower hinge, the
+median, the upper hinge, and the largest value of a vector $x$\\
+\type{floor(x)} & Returns a numeric vector containing the largest 
+integers not greater than the corresponding elements of $x$\\
+\type{IQR(x)} & Returns the interquartile range of $x$\\
+\type{length(x)} &The number of values in $x$\\
+\type{log(x)} & Computes the natural logarithm for all values in $x$\\
+\type{log10(x)} & Computes the base 10 logarithm for all values in $x$\\
+\type{mad(x, constant = 1)}& Returns the median absolute deviation of $x$\\
+\type{max(x)}& The largest value of $x$ \\
+\type{mean(x)}& Computes the sample mean of $x$\\
+\type{median(x)}& Returns the sample median of $x$\\
+\type{min(x)}& The smallest value of  $x$ \\
+\type{prod(x)}& The product of all the values in $x$\\
+\type{quantile(x)} & Computes the quantiles of a data set stored in a
+vector $x$\\
+\type{range(x)} & Returns the smallest and largest values in $x$\\
+\type{rbind(x, y)} & Joins vectors $x$ and $y$ as rows of vectors\\
+\type{rep(x, n)} & Repeats vector $x$ $n$ times\\
+\type{round(x, n)} & Rounds the number of decimals to $n$ for object $x$\\
+\type{scale(x)} & Computes the $z$-score of $x$\\
+\type{sd(x)} & Computes the sample standard deviation of $x$\\
+\type{seq(x, y, n)} & Creates a sequence of numbers from $x$ to $y$ with
+incremental value $n$\\
+\type{sin(x)} & Returns the sine for all values in $x$\\
+\type{sqrt(x)} & Computes the square root for all values in $x$\\
+\type{sum(x)} & The sum of all the values in $x$\\
+\type{summary(x)} & Returns the minimum, the first quartile, the median,
+the mean, the third quartile, and the maximum of $x$\\
+\type{tan(x)} & Returns the tangent for all values in $x$\\
+\type{var(x)} & Computes the sample variance of $x$\\
+\type{which(x == n)} & Give the index of number $n$ in vector $x$\\
+\bottomrule
+\end{longtable}
+\rowcolors{1}{}{}  % reset so next table does not use coloring!
+
+
+
+
+% \vspace{-4ex}\enlargethispage{2ex}
+\rowcolors{1}{}{lightgray}
+\ra{1.4}  % Increase space between functions
+\begin{longtable}{p{.5\textwidth}p{.5\textwidth}}
+\caption{\label{VecMatTable}\prog{R} Vector and Matrix Functions}\\
+\toprule
+% \begin{table}[!ht]\caption{\label{VecMatTable}\prog{S} Vector and Matrix Functions}
+% \centerline{\begin{tabular}{p{6.5cm}p{6.5cm}} \hline
+Function & Description\\ 
+\midrule
+\endfirsthead
+\caption{\prog{R} Vector and Matrix Functions (continued)}\\
+\toprule
+Function & Description\\
+\midrule
+\endhead
+%
+\type{A\%*\%B} & Matrix multiplication of $A$ and $B$\\
+%
+\type{diag(matrix)}& Extracts the diagonal elements of the matrix\\
+%
+\type{diag(vector)}& Produces a diagonal matrix with the elements from the vector \\
+%
+\type{dim(matrix)} & Obtains the matrix dimensions\\
+%
+\type{dimnames(matrix)} & Verifies if rows and columns names have been assigned\\
+%
+\type{eigen(matrix)}& Used to compute eigenvalues and eigenvectors\\
+%
+\type{matrix(vector, nrow=r, byrow=TRUE)} & Creates a matrix by rows with $n$ rows\\
+%
+\type{names(vector)} & Allows the assignment of names to a vector\\
+%
+\type{order(vector, matrix, data frames)} & Orders by more than one variable\\
+%
+\type{set.seed(number)} & Reproduces the same set of pseudo-random numbers\\
+%
+\type{solve(A)}& Used to find the inverse of a matrix $\mathbf{A}$\\
+%
+\type{solve(A,b)}& Used to solve systems of equations $\mathbf{Ax=b}$\\
+%
+\type{sort(vector)}& Produces an ordered vector\\
+%
+\type{svd(matrix)}& Used to find the singular value decomposition of a matrix\\
+%
+\type{t(A)}& Used to find the transpose of a matrix $\mathbf{A}$ \\
+%
+\bottomrule
+\end{longtable}
+\rowcolors{1}{}{}  % reset so next table does not use coloring!
+
+
+
+
+
+\begin{table}
+\centering
+\begin{tabular}{llr} 
+\toprule 
+\multicolumn{2}{c}{Name} \\ 
+\cmidrule(r){1-2} 
+First name & Last Name & Grade \\ 
+\midrule 
+John & Doe & $7.5$ \\ 
+Richard & Miles & $2$ \\ 
+\bottomrule 
+\end{tabular}
+\caption{Looking Good!}
+\end{table}
+
+\clearpage
+
+\end{document}
